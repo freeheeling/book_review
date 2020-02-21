@@ -1,5 +1,11 @@
 class SearchController < ApplicationController
   def index
+    render locals: {
+      search_results: BookSearch.new(params[:title])
+    }
+
+
+
     title = params[:title]
 
     ol_conn = Faraday.new(url: 'http://openlibrary.org') do |f|

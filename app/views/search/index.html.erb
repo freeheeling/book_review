@@ -1,6 +1,7 @@
-<p>Title: <%= @books[:title_suggest] %></p>
-<p>Author: <%= @books[:author_name].join() %></p>
-<p>Genres: <%= @books[:subject] %></p>
+<%= require "pry"; binding.pry %>
+<p>Title: <%= search_results.title %></p>
+<p>Author: <%= search_results.author %></p>
+<p>Genres: <%= search_results.genres %></p>
 <% @reviews.each_with_index do |review| %>
   <ul class='book-review'>
     <li class='review'>Review: <%= review[:summary] %></li>
