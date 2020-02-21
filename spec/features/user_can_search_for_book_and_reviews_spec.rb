@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'As a User' do
-  it 'can search for a book and review' do
+  it 'can search for a book and associated reviews' do
     visit root_path
 
     fill_in :title, with: 'Normal People'
@@ -9,6 +9,7 @@ RSpec.describe 'As a User' do
     click_on 'Find Book'
 
     expect(current_path).to eq(search_path)
+
     expect(page).to have_content('Title: Normal People')
     expect(page).to have_content('Author: Sally Rooney')
     expect(page).to have_content('Genres: ["Psychophysiology", "Emotions"]')

@@ -1,0 +1,8 @@
+<p>Title: <%= @books.title %></p>
+<p>Author: <%= @books.author %></p>
+<p>Genres: <%= @books.genres %></p>
+<p> <% @books.each do |book| %></p>
+<ul class='book-review'>
+  <li class='review'>Review: <%= book.review %></li>
+  <li class='review-pub-date'>Review Publication Date: <%= book.publication_date %></li>
+</ul>
