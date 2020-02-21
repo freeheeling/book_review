@@ -20,6 +20,7 @@ class SearchController < ApplicationController
 
     nyt_response = nyt_conn.get('svc/books/v3/reviews.json')
 
-    require "pry"; binding.pry
+    nyt_parsed_json = JSON.parse(nyt_response.body, symbolize_names: true)
+    @reviews = nyt_parsed_json[:results]
   end
 end

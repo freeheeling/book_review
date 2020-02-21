@@ -1,9 +1,9 @@
 <p>Title: <%= @books[:title_suggest] %></p>
-<p>Author: <%= @books[:author_name] %></p>
+<p>Author: <%= @books[:author_name].join() %></p>
 <p>Genres: <%= @books[:subject] %></p>
-<% @reviews.each do |review| %>
+<% @reviews.each_with_index do |review| %>
   <ul class='book-review'>
-    <li class='review'>Review: <%= review.summary %></li>
-    <li class='review-pub-date'>Review Publication Date: <%= review.publication_date %></li>
+    <li class='review'>Review: <%= review[:summary] %></li>
+    <li class='review-pub-date'>Review Publication Date: <%= review[:publication_dt] %></li>
   </ul>
 <% end %>
