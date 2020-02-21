@@ -1,7 +1,6 @@
-<%= require "pry"; binding.pry %>
-<p>Title: <%= search_results.title %></p>
-<p>Author: <%= search_results.author %></p>
-<p>Genres: <%= search_results.genres %></p>
+<p>Title: <%= search_results.books.book_title %></p>
+<p>Author: <%= search_results.books.author %></p>
+<p>Genres: <%= search_results.books.genres %></p>
 <% @reviews.each_with_index do |review| %>
   <ul class='book-review'>
     <li class='review'>Review: <%= review[:summary] %></li>
