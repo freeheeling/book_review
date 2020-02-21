@@ -1,8 +1,9 @@
-<p>Title: <%= @books.title %></p>
-<p>Author: <%= @books.author %></p>
-<p>Genres: <%= @books.genres %></p>
-<p> <% @books.each do |book| %></p>
-<ul class='book-review'>
-  <li class='review'>Review: <%= book.review %></li>
-  <li class='review-pub-date'>Review Publication Date: <%= book.publication_date %></li>
-</ul>
+<p>Title: <%= @books[:title_suggest] %></p>
+<p>Author: <%= @books[:author_name] %></p>
+<p>Genres: <%= @books[:subject] %></p>
+<% @reviews.each do |review| %>
+  <ul class='book-review'>
+    <li class='review'>Review: <%= review.summary %></li>
+    <li class='review-pub-date'>Review Publication Date: <%= review.publication_date %></li>
+  </ul>
+<% end %>
